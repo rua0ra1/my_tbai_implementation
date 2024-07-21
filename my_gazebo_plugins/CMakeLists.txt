@@ -12,13 +12,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(catkin REQUIRED COMPONENTS
   controller_interface
   hardware_interface
-  ocs2_robotic_tools
   pluginlib
   realtime_tools
   roscpp
   std_msgs
-  tbai_core
-  tbai_msgs
 )
 
 find_package(gazebo REQUIRED)
@@ -115,7 +112,7 @@ find_package(gazebo REQUIRED)
 catkin_package(
    INCLUDE_DIRS include
 #  LIBRARIES my_gazebo_plugins
-   CATKIN_DEPENDS roscpp tbai_core tbai_msgs
+   CATKIN_DEPENDS roscpp std_msgs
 #  DEPENDS system_lib
 )
 

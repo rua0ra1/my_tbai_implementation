@@ -1,7 +1,4 @@
 #include "my_gazebo_plugins/MyContactSensor.hpp"
-#include <tbai_core/Types.hpp>
-#include <tbai_core/config/YamlConfig.hpp>
-
 namespace gazebo{
 GZ_REGISTER_SENSOR_PLUGIN(MyContactSensor)
 
@@ -31,7 +28,7 @@ void MyContactSensor::Load(sensors::SensorPtr sensor, sdf::ElementPtr sdf) {
     ROS_INFO_STREAM("[ContactSensor] Loading ContactSensor plugin. Publishing on topic /" << topicName);
 
     // Setup update rate
-    auto updateRate = tbai::core::fromRosConfig<tbai::scalar_t>("contact_sensor/update_rate");
+    auto updateRate = 100;
     this->parentSensor->SetUpdateRate(updateRate);
 
     ROS_INFO_STREAM("[ContactSensor] Loaded ContactSensor plugin. Update rate: " << updateRate << " Hz");
