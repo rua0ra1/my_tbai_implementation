@@ -1,0 +1,29 @@
+robot_name: 'anymal_d'
+
+joint_names: &jn ["LF_HAA", "LF_HFE", "LF_KFE", "LH_HAA", "LH_HFE", "LH_KFE", "RF_HAA", "RF_HFE", "RF_KFE", "RH_HAA", "RH_HFE", "RH_KFE"]
+base_name: "base"
+
+state_topic: "anymal_d/state"
+command_topic: "anymal_d/command"
+change_controller_topic: "anymal_d/change_controller"
+
+state_publisher:
+  update_rate: 400 # Hz
+
+static_controller:
+  stand_controller:
+    joint_angles: [0.0, 0.4, -0.8, 0.0, -0.4, 0.8, 0.0, 0.4, -0.8, 0.0, -0.4, 0.8] # LF, LH, RF, RH
+  sit_controller:
+    joint_angles: [0.0, 1.5, -2.6, 0.0, -1.5, 2.6, 0.0, 1.5, -2.6, 0.0, -1.5, 2.6] # LF, LH, RF, RH
+  kp: 400
+  kd: 5
+  interpolation_time: 1.0 # s
+  rate: 50 # Hz
+
+anymal_d:
+  joint_controller:
+      type: tbai_gazebo/JointController
+      joints: *jn
+
+contact_sensor:
+  update_rate: 20 # Hz
