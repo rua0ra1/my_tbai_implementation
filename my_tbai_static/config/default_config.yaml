@@ -22,7 +22,7 @@ static_controller:
 
 anymal_d:
   joint_controller:
-      type: tbai_gazebo/JointController
+      type: my_tbai_gazebo/JointController
       joints: *jn
 
 contact_sensor:

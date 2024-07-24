@@ -39,7 +39,7 @@ StaticController::StaticController(const std::string &configRosParam,
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
-tbai_msgs::JointCommandArray StaticController::getCommandMessage(scalar_t currentTime, scalar_t dt) {
+my_tbai_msgs::JointCommandArray StaticController::getCommandMessage(scalar_t currentTime, scalar_t dt) {
     timeSinceLastVisualizationUpdate_ += dt;
 
     if (alpha_ != -1.0) {
@@ -160,7 +160,7 @@ void StaticController::publishJointAngles(const vector_t &currentState, const ro
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
-tbai_msgs::JointCommandArray StaticController::getInterpCommandMessage(scalar_t dt) {
+my_tbai_msgs::JointCommandArray StaticController::getInterpCommandMessage(scalar_t dt) {
     // Update alpha
     alpha_ = std::min(alpha_ + dt / interpolationTime_, static_cast<scalar_t>(1.0));
 
@@ -178,25 +178,25 @@ tbai_msgs::JointCommandArray StaticController::getInterpCommandMessage(scalar_t 
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
-tbai_msgs::JointCommandArray StaticController::getStandCommandMessage() {
+my_tbai_msgs::JointCommandArray StaticController::getStandCommandMessage() {
     return packCommandMessage(standJointAngles_);
 }
 
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
-tbai_msgs::JointCommandArray StaticController::getSitCommandMessage() {
+my_tbai_msgs::JointCommandArray StaticController::getSitCommandMessage() {
     return packCommandMessage(sitJointAngles_);
 }
 
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
-tbai_msgs::JointCommandArray StaticController::packCommandMessage(const vector_t &jointAngles) {
-    tbai_msgs::JointCommandArray commandArray;
+my_tbai_msgs::JointCommandArray StaticController::packCommandMessage(const vector_t &jointAngles) {
+    my_tbai_msgs::JointCommandArray commandArray;
     commandArray.joint_commands.resize(jointAngles.size());
     for (size_t i = 0; i < jointAngles.size(); ++i) {
-        tbai_msgs::JointCommand command;
+        my_tbai_msgs::JointCommand command;
         command.joint_name = jointNames_[i];
         command.desired_position = jointAngles[i];
         command.desired_velocity = 0.0;

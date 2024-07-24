@@ -23,7 +23,7 @@ class StaticController : public tbai::core::Controller {
     StaticController(const std::string &configRosParam,
                      std::shared_ptr<tbai::core::StateSubscriber> stateSubscriberPtr);
 
-    tbai_msgs::JointCommandArray getCommandMessage(scalar_t currentTime, scalar_t dt) override;
+    my_tbai_msgs::JointCommandArray getCommandMessage(scalar_t currentTime, scalar_t dt) override;
 
     void visualize() override;
 
@@ -48,16 +48,16 @@ class StaticController : public tbai::core::Controller {
     void publishJointAngles(const vector_t &currentState, const ros::Time &currentTime);
 
     /** Get command message during interpolation phase */
-    tbai_msgs::JointCommandArray getInterpCommandMessage(scalar_t dt);
+    my_tbai_msgs::JointCommandArray getInterpCommandMessage(scalar_t dt);
 
     /** Get command message when standing */
-    tbai_msgs::JointCommandArray getStandCommandMessage();
+    my_tbai_msgs::JointCommandArray getStandCommandMessage();
 
     /** Get command message when sitting */
-    tbai_msgs::JointCommandArray getSitCommandMessage();
+    my_tbai_msgs::JointCommandArray getSitCommandMessage();
 
     /** Pack desired joint angles into a command message */
-    tbai_msgs::JointCommandArray packCommandMessage(const vector_t &jointAngles);
+    my_tbai_msgs::JointCommandArray packCommandMessage(const vector_t &jointAngles);
 
     /** State subscriber */
     std::shared_ptr<tbai::core::StateSubscriber> stateSubscriberPtr_;
