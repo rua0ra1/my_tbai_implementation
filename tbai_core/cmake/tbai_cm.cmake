@@ -1,0 +1,4 @@
+set(LIBTORCH_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../dependencies/libtorch)
+set(LIBTORCH_INCLUDE_DIR ${LIBTORCH_DIR}/include)
+set(LIBTORCH_LIB_DIR ${LIBTORCH_DIR}/lib)
+set(LIBTORCH_CMAKE_DIR ${LIBTORCH_DIR}/share/cmake/Torch)
