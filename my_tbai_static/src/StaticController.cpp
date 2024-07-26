@@ -28,7 +28,7 @@ StaticController::StaticController(const std::string &configRosParam,
     loadSettings(configRosParam);
 
     // Initialize robot state publisher
-    const std::string urdfFile = ros::package::getPath("ocs2_robotic_assets") + "/resources/anymal_d/urdf/anymal.urdf";
+    const std::string urdfFile = ros::package::getPath("metal_head_v1m1_m4_with_arm_fixed_4") + "urdf/metal_head_v1m1_m4_with_arm_fixed_4.urdf";
     urdf::Model urdfModel;
     KDL::Tree kdlTree;
     kdl_parser::treeFromFile(urdfFile, kdlTree);

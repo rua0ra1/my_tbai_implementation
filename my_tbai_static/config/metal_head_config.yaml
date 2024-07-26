@@ -1,0 +1,30 @@
+robot_name: 'metal_head'
+
+joint_names: &jn ["Joint01_FL", "Joint02_FL", "Joint03_FL", "Joint01_BL", "Joint02_BL", "Joint03_BL", "Joint01_FR", "Joint02_FR", "Joint03_FR", "Joint01_BR", "Joint01_BR", "Joint01_BR"]
+base_name: "base"
+
+state_topic: "metal_head/state"
+command_topic: "metal_head/command"
+change_controller_topic: "metal_head/change_controller"
+
+state_publisher:
+  update_rate: 400 # Hz
+
+static_controller:
+  stand_controller:
+      joint_angles: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # LF, LH, RF, RH
+    # joint_angles: [0.0, 0.4, -0.8, 0.0, -0.4, 0.8, 0.0, 0.4, -0.8, 0.0, -0.4, 0.8] # LF, LH, RF, RH
+  sit_controller:
+    joint_angles: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # LF, LH, RF, RH
+  kp: 1
+  kd: 0.2
+  interpolation_time: 1.0 # s
+  rate: 50 # Hz
+
+metal_head:
+  joint_controller:
+      type: my_tbai_gazebo/JointController
+      joints: *jn
+
+contact_sensor:
+  update_rate: 20 # Hz

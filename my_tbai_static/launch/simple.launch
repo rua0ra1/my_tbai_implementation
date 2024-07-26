@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <launch>
     <!-- Required arguments -->
-    <arg name="controllers_ns"      default="anymal_d"/>
+    <arg name="controllers_ns"      default="metal_head"/>
     <arg name="controllers_args"    default="joint_controller"/>
-    <arg name="tbai_config_path"    default="$(find my_tbai_static)/config/default_config.yaml"/>
+    <arg name="tbai_config_path"    default="$(find my_tbai_static)/config/metal_head_config.yaml"/>
     <arg name="description_name"    default="robot_description"/>
-    <arg name="description_file"    default="$(find my_tbai_description)/urdf/anymal_d_gazebo.urdf.xacro"/>
+    <arg name="description_file"    default="$(find my_tbai_description)/urdf/metal_head_gazebo.urdf.xacro"/>
 
     <!-- Gazebo parameters -->
     <arg name="gui" default="false"/>
@@ -13,7 +13,7 @@
     <arg name="world" default="normal"/>
     <arg name="x" default="0.0"/>
     <arg name="y" default="0.0"/>
-    <arg name="z" default="3.0"/>
+    <arg name="z" default="0.3"/>
 
     <!-- Upload config path to ROS param server -->
     <param name="tbai_config_path" type="string" value="$(arg tbai_config_path)"/>
