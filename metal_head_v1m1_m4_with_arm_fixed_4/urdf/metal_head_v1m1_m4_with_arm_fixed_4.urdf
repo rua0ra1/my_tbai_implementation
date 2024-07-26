@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="metal_head">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="0.00272280586503986 -3.67175782035141E-05 0.00791457636554705"
+        rpy="0 0 0" />
+      <mass
+        value="1.49829855979102" />
+      <inertia
+        ixx="0.00128271766498655"
+        ixy="-6.9217495080254E-06"
+        ixz="2.80049005447544E-06"
+        iyy="0.00559868305367329"
+        iyz="-4.4471753001719E-08"
+        izz="0.00640931346181532" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Camera_link">
+    <inertial>
+      <origin
+        xyz="-0.00390786396615492 0.0131822072313309 2.87190157332445E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.074981964325194" />
+      <inertia
+        ixx="4.62881325791234E-05"
+        ixy="8.85804419872042E-08"
+        ixz="-2.55510964994389E-08"
+        iyy="4.14640234530239E-06"
+        iyz="-1.57303416653035E-08"
+        izz="4.37028600649143E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Depth_camera"
+    type="fixed">
+    <origin
+      xyz="0.17888518 -0.0114999864649402 0.00574999135024001"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link01_FL">
+    <inertial>
+      <origin
+        xyz="1.95829968144268E-07 0.0168303173296565 5.71467700205966E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245744533216826" />
+      <inertia
+        ixx="3.29879549918277E-06"
+        ixy="6.11367384660365E-11"
+        ixz="-1.60951220261676E-11"
+        iyy="6.52571602481866E-06"
+        iyz="1.36529043140221E-11"
+        izz="7.35828428979242E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint01_FL"
+    type="revolute">
+    <origin
+      xyz="0.115 0.0372500000000001 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Link01_FL" />
+    <axis
+      xyz="1 0 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link02_FL">
+    <inertial>
+      <origin
+        xyz="-0.000437125798171623 -1.88464421716772E-05 -0.0352542209493059"
+        rpy="0 0 0" />
+      <mass
+        value="0.220405984584206" />
+      <inertia
+        ixx="0.000106987697500263"
+        ixy="1.83885443973576E-08"
+        ixz="2.81334858636883E-09"
+        iyy="0.000108516929863687"
+        iyz="-9.92554160155792E-07"
+        izz="3.71662375644544E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint02_FL"
+    type="revolute">
+    <origin
+      xyz="0 0.0519999999999999 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link01_FL" />
+    <child
+      link="Link02_FL" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link03_FL">
+    <inertial>
+      <origin
+        xyz="0.005552762266078 -0.000220584171939625 -0.0443220523799636"
+        rpy="0 0 0" />
+      <mass
+        value="0.0743342321888104" />
+      <inertia
+        ixx="0.000130019971008441"
+        ixy="-2.66795558083886E-07"
+        ixz="8.31939309263861E-06"
+        iyy="0.000133743813949422"
+        iyz="3.41075866410913E-06"
+        izz="7.65491354095075E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint03_FL"
+    type="revolute">
+    <origin
+      xyz="0 0.034500000000004 -0.0706559599494836"
+      rpy="0 0 0" />
+    <parent
+      link="Link02_FL" />
+    <child
+      link="Link03_FL" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link04_FL">
+    <inertial>
+      <origin
+        xyz="0.00545320862511998 -0.00258394389565503 0.0121232300830035"
+        rpy="0 0 0" />
+      <mass
+        value="0.00626589308588588" />
+      <inertia
+        ixx="4.82096951052719E-07"
+        ixy="1.75274726317129E-08"
+        ixz="1.33162993512649E-09"
+        iyy="6.96561231884386E-07"
+        iyz="3.89659788743316E-08"
+        izz="4.84458328290788E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint04_FL"
+    type="fixed">
+    <origin
+      xyz="-0.00552489336542444 0.00649625121503115 -0.139873018931591"
+      rpy="0 0 0" />
+    <parent
+      link="Link03_FL" />
+    <child
+      link="Link04_FL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link01_FR">
+    <inertial>
+      <origin
+        xyz="-1.95829965826677E-07 -0.0168303173296563 5.7146766442993E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245744533216827" />
+      <inertia
+        ixx="3.29879549918277E-06"
+        ixy="6.11367384613006E-11"
+        ixz="1.60951220678221E-11"
+        iyy="6.52571602481866E-06"
+        iyz="-1.36529043147557E-11"
+        izz="7.35828428979242E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint01_FR"
+    type="revolute">
+    <origin
+      xyz="0.115 -0.03725 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Link01_FR" />
+    <axis
+      xyz="1 0 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link02_FR">
+    <inertial>
+      <origin
+        xyz="-0.000436940324672896 -8.93864434264868E-06 -0.0352457561569636"
+        rpy="0 0 0" />
+      <mass
+        value="0.220441311521433" />
+      <inertia
+        ixx="0.000107038942656919"
+        ixy="-1.61303915212815E-08"
+        ixz="3.60818250187289E-10"
+        iyy="0.0001085751301116"
+        iyz="9.93977122714184E-07"
+        izz="3.71703603865106E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint02_FR"
+    type="revolute">
+    <origin
+      xyz="0 -0.0519999999999989 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link01_FR" />
+    <child
+      link="Link02_FR" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link03_FR">
+    <inertial>
+      <origin
+        xyz="0.0103381366618193 0.000668290462673374 -0.0420847223107546"
+        rpy="0 0 0" />
+      <mass
+        value="0.0451347487196663" />
+      <inertia
+        ixx="7.72317229165012E-05"
+        ixy="6.79211659418481E-07"
+        ixz="1.33364214360967E-05"
+        iyy="8.0840973666499E-05"
+        iyz="-3.2430428375675E-06"
+        izz="7.01633087299087E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint03_FR"
+    type="revolute">
+    <origin
+      xyz="0 -0.0345000000000018 -0.0704999999998448"
+      rpy="0 0 0" />
+    <parent
+      link="Link02_FR" />
+    <child
+      link="Link03_FR" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link04_FR">
+    <inertial>
+      <origin
+        xyz="0.00382764288921236 0.00258394378286642 0.0127302531714441"
+        rpy="0 0 0" />
+      <mass
+        value="0.006265893042007" />
+      <inertia
+        ixx="4.81793088091217E-07"
+        ixy="-1.23026467172338E-08"
+        ixz="9.81475379879534E-10"
+        iyy="6.96561256517696E-07"
+        iyz="-4.09170416976371E-08"
+        izz="4.84762211731799E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint04_FR"
+    type="fixed">
+    <origin
+      xyz="0.0127616066486203 -0.00649625121503301 -0.139555655049002"
+      rpy="0 0 0" />
+    <parent
+      link="Link03_FR" />
+    <child
+      link="Link04_FR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link01_BL">
+    <inertial>
+      <origin
+        xyz="1.95829969171224E-07 0.0168303173296564 5.71467728110966E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245744533216826" />
+      <inertia
+        ixx="3.29879549918276E-06"
+        ixy="6.11367384641536E-11"
+        ixz="-1.60951219817188E-11"
+        iyy="6.52571602481865E-06"
+        iyz="1.36529043145388E-11"
+        izz="7.35828428979241E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint01_BL"
+    type="revolute">
+    <origin
+      xyz="-0.115 0.03725 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Link01_BL" />
+    <axis
+      xyz="1 0 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link02_BL">
+    <inertial>
+      <origin
+        xyz="0.000436940324640728 8.93864434040048E-06 -0.0352457561571844"
+        rpy="0 0 0" />
+      <mass
+        value="0.220441311521433" />
+      <inertia
+        ixx="0.000107038942656919"
+        ixy="-1.61303915222247E-08"
+        ixz="-3.60818317056724E-10"
+        iyy="0.000108575130111599"
+        iyz="-9.93977122714139E-07"
+        izz="3.71703603865106E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint02_BL"
+    type="revolute">
+    <origin
+      xyz="0 0.0520000000000011 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link01_BL" />
+    <child
+      link="Link02_BL" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link03_BL">
+    <inertial>
+      <origin
+        xyz="-0.00476837395887103 0.010431579542845 -0.0409735883765803"
+        rpy="0 0 0" />
+      <mass
+        value="0.045135822194835" />
+      <inertia
+        ixx="7.94856986323855E-05"
+        ixy="2.50996535304516E-07"
+        ixz="-3.81592182496782E-06"
+        iyy="8.08415522990731E-05"
+        iyz="3.30387213365292E-06"
+        izz="4.76293666612197E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint03_BL"
+    type="revolute">
+    <origin
+      xyz="0 0.0234 -0.0726000000000638"
+      rpy="0 0 0" />
+    <parent
+      link="Link02_BL" />
+    <child
+      link="Link03_BL" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link04_BL">
+    <inertial>
+      <origin
+        xyz="-0.00545320781521509 -0.00258394358362757 0.0121232286738243"
+        rpy="0 0 0" />
+      <mass
+        value="0.00626589208526502" />
+      <inertia
+        ixx="4.82096870687528E-07"
+        ixy="-1.75274631279306E-08"
+        ixz="-1.33167693642831E-09"
+        iyy="6.96561126415961E-07"
+        iyz="3.89659596987123E-08"
+        izz="4.84458297197818E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint04_BL"
+    type="fixed">
+    <origin
+      xyz="0.0055148060583165 0.0175914713205365 -0.137906553090082"
+      rpy="0 0 0" />
+    <parent
+      link="Link03_BL" />
+    <child
+      link="Link04_BL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link01_BR">
+    <inertial>
+      <origin
+        xyz="-1.95829968019368E-07 -0.0168303173296567 5.71467716131563E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245744533216826" />
+      <inertia
+        ixx="3.29879549918277E-06"
+        ixy="6.11367384623478E-11"
+        ixz="1.60951220251218E-11"
+        iyy="6.52571602481865E-06"
+        iyz="-1.36529043145432E-11"
+        izz="7.35828428979241E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link01_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint01_BR"
+    type="revolute">
+    <origin
+      xyz="-0.115 -0.0372499999999998 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Link01_BR" />
+    <axis
+      xyz="1 0 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link02_BR">
+    <inertial>
+      <origin
+        xyz="0.0004371257471876 1.88464423718643E-05 -0.0352542210576594"
+        rpy="0 0 0" />
+      <mass
+        value="0.220405984589035" />
+      <inertia
+        ixx="0.000106987697508889"
+        ixy="1.83885445885776E-08"
+        ixz="-2.81335197671822E-09"
+        iyy="0.00010851692987361"
+        iyz="9.92554160635395E-07"
+        izz="3.71662375657912E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link02_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint02_BR"
+    type="revolute">
+    <origin
+      xyz="0 -0.0520000000000002 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link01_BR" />
+    <child
+      link="Link02_BR" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link03_BR">
+    <inertial>
+      <origin
+        xyz="-0.00555276219513652 -0.0108794158181763 -0.0423780125079394"
+        rpy="0 0 0" />
+      <mass
+        value="0.0743342319864427" />
+      <inertia
+        ixx="0.000130019970355013"
+        ixy="-2.66795552396677E-07"
+        ixz="-8.31939290119869E-06"
+        iyy="0.00013374381325886"
+        iyz="-3.41075865279684E-06"
+        izz="7.65491350266798E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link03_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint03_BR"
+    type="revolute">
+    <origin
+      xyz="0 -0.0234000000000017 -0.0725999997976657"
+      rpy="0 0 0" />
+    <parent
+      link="Link02_BR" />
+    <child
+      link="Link03_BR" />
+    <axis
+      xyz="0 1 0" />
+    <limit command_effort="80.0" current="32.0" effort="80.0" gear_velocity="8.5" lower="-9.42477796076938" upper="9.42477796076938" velocity="8.5"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  
+  </joint>
+  <link
+    name="Link04_BR">
+    <inertial>
+      <origin
+        xyz="-0.00545320799740487 0.00258394355559921 0.0121232290815788"
+        rpy="0 0 0" />
+      <mass
+        value="0.00626589229343858" />
+      <inertia
+        ixx="4.82096902235181E-07"
+        ixy="1.75274625794621E-08"
+        ixz="-1.33166195173896E-09"
+        iyy="6.96561165272122E-07"
+        iyz="-3.89659613619931E-08"
+        izz="4.84458303414193E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint04_BR"
+    type="fixed">
+    <origin
+      xyz="0.00552489364269197 -0.017596251215033 -0.137928979181456"
+      rpy="0 0 0" />
+    <parent
+      link="Link03_BR" />
+    <child
+      link="Link04_BR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Arm_Link">
+    <inertial>
+      <origin
+        xyz="-0.0312388766645831 0.016334546024769 0.132445123897846"
+        rpy="0 0 0" />
+      <mass
+        value="0.345663542816253" />
+      <inertia
+        ixx="0.00211268127820838"
+        ixy="3.82481511940307E-05"
+        ixz="0.000211874890596984"
+        iyy="0.00341263996126643"
+        iyz="0.000130949260282667"
+        izz="0.00137516313571848" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Arm_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Arm_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_01_arm"
+    type="fixed">
+    <origin
+      xyz="0.078561 -0.02075 0.076463"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="Arm_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
