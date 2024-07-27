@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="metal_head">
+
+<!-- Includes -->
+<xacro:include filename="utils.xacro" />
+
+<!-- Anymal D bare urdf -->
+<xacro:include filename="$(find metal_head_v1m1_m4_with_arm_fixed_4)/urdf/metal_head_v1m1_m4_with_arm_fixed_4.urdf" />
+
+<!-- Transmissions LF -->
+<xacro:transmission name="transmission_LF_HAA" joint="Joint01_FL" actuator="motor_LF_HAA"/>
+<xacro:transmission name="transmission_LF_HFE" joint="Joint02_FL" actuator="motor_LF_HFE"/>
+<xacro:transmission name="transmission_LF_KFE" joint="Joint03_FL" actuator="motor_LF_KFE"/>
+
+<!-- Transmissions LH -->
+<xacro:transmission name="transmission_LH_HAA" joint="Joint01_BL" actuator="motor_LH_HAA"/>
+<xacro:transmission name="transmission_LH_HFE" joint="Joint02_BL" actuator="motor_LH_HFE"/>
+<xacro:transmission name="transmission_LH_KFE" joint="Joint03_BL" actuator="motor_LH_KFE"/>
+
+<!-- Transmissions RF -->
+<xacro:transmission name="transmission_RF_HAA" joint="Joint01_FR" actuator="motor_RF_HAA"/>
+<xacro:transmission name="transmission_RF_HFE" joint="Joint02_FR" actuator="motor_RF_HFE"/>
+<xacro:transmission name="transmission_RF_KFE" joint="Joint03_FR" actuator="motor_RF_KFE"/>
+
+<!-- Transmissions RH -->
+<xacro:transmission name="transmission_RH_HAA" joint="Joint01_BR" actuator="motor_RH_HAA"/>
+<xacro:transmission name="transmission_RH_HFE" joint="Joint02_BR" actuator="motor_RH_HFE"/>
+<xacro:transmission name="transmission_RH_KFE" joint="Joint03_BR" actuator="motor_RH_KFE"/>
+
+<!-- Joint controller -->
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <robotNamespace>/metal_head</robotNamespace>
+  </plugin>
+</gazebo>
+
+<!-- State publisher -->
+<gazebo>
+  <plugin filename="libStatePublisher.so" name="StatePublisher"/>
+</gazebo>
+
+
+
+
+<!-- Add contact sensors -->
+<gazebo reference="Link04_FL">
+    <sensor name="lf_foot_contact" type="contact">
+    <plugin name="lf_contact_plugin" filename="libContactSensor.so"/>
+    <contact>
+        <collision>LF_SHANK_fixed_joint_lump__LF_FOOT_collision_3</collision>
+    </contact>
+    </sensor>
+</gazebo>
+
+<gazebo reference="Link04_FR">
+    <sensor name="rf_foot_contact" type="contact">
+    <plugin name="rf_contact_plugin" filename="libContactSensor.so"/>
+    <contact>
+        <collision>RF_SHANK_fixed_joint_lump__RF_FOOT_collision_3</collision>
+    </contact>
+    </sensor>
+</gazebo>
+
+<gazebo reference="Link04_BL">
+    <sensor name="lh_foot_contact" type="contact">
+    <plugin name="lh_contact_plugin" filename="libContactSensor.so"/>
+    <contact>
+        <collision>LH_SHANK_fixed_joint_lump__LH_FOOT_collision_3</collision>
+    </contact>
+    </sensor>
+</gazebo>
+
+<gazebo reference="Link04_BR">
+    <sensor name="rh_foot_contact" type="contact">
+    <plugin name="rh_contact_plugin" filename="libContactSensor.so"/>
+    <contact>
+        <collision>RH_SHANK_fixed_joint_lump__RH_FOOT_collision_3</collision>
+    </contact>
+    </sensor>
+</gazebo>
+
+<!-- Gazebo materials -->
+<gazebo reference="Link04_FL">
+  <mu1>1.85</mu1>
+  <mu2>1.85</mu2>
+  <kp value="1000000.0"/>
+  <kd value="100.0"/>
+</gazebo>
+
+<gazebo reference="Link04_FR">
+  <mu1>1.85</mu1>
+  <mu2>1.85</mu2>
+  <kp value="1000000.0"/>
+  <kd value="100.0"/>
+</gazebo>
+
+<gazebo reference="Link04_BL">
+  <mu1>1.85</mu1>
+  <mu2>1.85</mu2>
+  <kp value="1000000.0"/>
+  <kd value="100.0"/>
+</gazebo>
+
+<gazebo reference="Link04_BR">
+  <mu1>1.85</mu1>
+  <mu2>1.85</mu2>
+  <kp value="1000000.0"/>
+  <kd value="100.0"/>
+</gazebo>
+
+</robot>
