@@ -6,20 +6,6 @@
   name="metal_head">
   <link
     name="base">
-    <inertial>
-      <origin
-        xyz="0.00272280586503986 -3.67175782035141E-05 0.00791457636554705"
-        rpy="0 0 0" />
-      <mass
-        value="1.49829855979102" />
-      <inertia
-        ixx="0.00128271766498655"
-        ixy="-6.9217495080254E-06"
-        ixz="2.80049005447544E-06"
-        iyy="0.00559868305367329"
-        iyz="-4.4471753001719E-08"
-        izz="0.00640931346181532" />
-    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
@@ -44,6 +30,30 @@
       </geometry>
     </collision>
   </link>
+  <joint name="base_to_base_inertia" type="fixed">
+    <parent link="base"/>
+    <child link="base_inertia"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+   <link name="base_inertia">
+     <inertial>
+      <origin
+        xyz="0.00272280586503986 -3.67175782035141E-05 0.00791457636554705"
+        rpy="0 0 0" />
+      <mass
+        value="1.49829855979102" />
+      <inertia
+        ixx="0.00128271766498655"
+        ixy="-6.9217495080254E-06"
+        ixz="2.80049005447544E-06"
+        iyy="0.00559868305367329"
+        iyz="-4.4471753001719E-08"
+        izz="0.00640931346181532" />
+    </inertial>
+  </link>
+
+
   <link
     name="Camera_link">
     <inertial>
@@ -295,7 +305,13 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision name="spherical_collision">
+      <origin xyz="0.008 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+    </collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -303,7 +319,7 @@
         <mesh
           filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FL.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Joint04_FL"
@@ -516,7 +532,13 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision name="spherical_collision">
+      <origin xyz="0.008 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+    </collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -524,7 +546,7 @@
         <mesh
           filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_FR.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Joint04_FR"
@@ -737,7 +759,13 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+   <collision name="spherical_collision">
+      <origin xyz="-0.008 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+    </collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -745,7 +773,7 @@
         <mesh
           filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BL.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Joint04_BL"
@@ -958,7 +986,15 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+
+   <collision name="spherical_collision">
+      <origin xyz="-0.008 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+    </collision>
+
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -966,7 +1002,7 @@
         <mesh
           filename="package://metal_head_v1m1_m4_with_arm_fixed_4/meshes/Link04_BR.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="Joint04_BR"
@@ -981,7 +1017,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
+  <!-- <link
     name="Arm_Link">
     <inertial>
       <origin
@@ -1033,5 +1069,5 @@
       link="Arm_Link" />
     <axis
       xyz="0 0 0" />
-  </joint>
+  </joint> -->
 </robot>

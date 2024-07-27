@@ -6,7 +6,7 @@
     default="False" />
   <param
     name="robot_description"
-    textfile="$(find anymal_d_simple_description)/urdf/anymal.urdf" />
+    textfile="$(find metal_head_v1m1_m4_with_arm_fixed_4)/urdf/metal_head_v1m1_m4_with_arm_fixed_4.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -14,6 +14,10 @@
     name="joint_state_publisher"
     pkg="joint_state_publisher"
     type="joint_state_publisher" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"
