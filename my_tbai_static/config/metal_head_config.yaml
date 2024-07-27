@@ -1,6 +1,6 @@
 robot_name: 'metal_head'
 
-joint_names: &jn ["Joint01_FL", "Joint02_FL", "Joint03_FL", "Joint01_BL", "Joint02_BL", "Joint03_BL", "Joint01_FR", "Joint02_FR", "Joint03_FR", "Joint01_BR", "Joint01_BR", "Joint01_BR"]
+joint_names: &jn ["Joint01_FL", "Joint02_FL", "Joint03_FL", "Joint01_BL", "Joint02_BL", "Joint03_BL", "Joint01_FR", "Joint02_FR", "Joint03_FR", "Joint01_BR", "Joint02_BR", "Joint03_BR"]
 base_name: "base"
 
 state_topic: "metal_head/state"
@@ -15,9 +15,9 @@ static_controller:
       joint_angles: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # LF, LH, RF, RH
     # joint_angles: [0.0, 0.4, -0.8, 0.0, -0.4, 0.8, 0.0, 0.4, -0.8, 0.0, -0.4, 0.8] # LF, LH, RF, RH
   sit_controller:
-    joint_angles: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # LF, LH, RF, RH
-  kp: 1
-  kd: 0.2
+    joint_angles: [0.0, 1, -2, 0.0, -1, 2, 0.0, 1, -2, 0,-1, 2] # LF, LH, RF, RH
+  kp: 4
+  kd: 0.1
   interpolation_time: 1.0 # s
   rate: 50 # Hz
 
